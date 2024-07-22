@@ -17,10 +17,12 @@ while True:
     else:
         print("you must enter a number between 2 and 4.")
 
-max_score = 40
-player_scores = [0 for i in range(players)]
+player_scores = []
 
-while max(player_scores) < max_score:
+for i in range(players):
+    players_scores.append(0)
+
+while max(player_scores) < 40:
     for player_index in range(players):
         print("")
         print("Player number", player_index + 1, "turn has begun!")
@@ -36,6 +38,7 @@ while max(player_scores) < max_score:
             if value == 1:
                 print("You rolled a 1! your turn is over!")
                 current_score = 0
+                print("Your score is:", current_score)
                 break
             else:
                 current_score += value
@@ -48,5 +51,4 @@ while max(player_scores) < max_score:
 
 max_score = max(player_scores)
 winning_index = player_scores.index(max_score)
-print("Player number ", winning_index + 1,
-      "is the winner with a score of: ", max_score)
+print("Player number ", winning_index + 1, " is the winner with a score of: ", max_score)
